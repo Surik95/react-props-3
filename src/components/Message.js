@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Message({ from, message }) {
   return (
@@ -12,3 +13,12 @@ export default function Message({ from, message }) {
     </li>
   );
 }
+
+Message.propTypes = {
+  from: PropTypes.shape({
+    name: PropTypes.string,
+  }).isRequired,
+  message: PropTypes.shape({
+    time: PropTypes.string,
+  }).isRequired,
+};

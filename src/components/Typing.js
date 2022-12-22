@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Typing({ from, message }) {
   return (
@@ -17,3 +18,12 @@ export default function Typing({ from, message }) {
     </li>
   );
 }
+
+Typing.propTypes = {
+  from: PropTypes.shape({
+    name: PropTypes.string,
+  }).isRequired,
+  message: PropTypes.shape({
+    time: PropTypes.string,
+  }).isRequired,
+};

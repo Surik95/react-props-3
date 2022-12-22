@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 export default function Response({ from, message }) {
   return (
@@ -13,3 +14,12 @@ export default function Response({ from, message }) {
     </li>
   );
 }
+
+Response.propTypes = {
+  from: PropTypes.shape({
+    name: PropTypes.string,
+  }).isRequired,
+  message: PropTypes.shape({
+    time: PropTypes.string,
+  }).isRequired,
+};
